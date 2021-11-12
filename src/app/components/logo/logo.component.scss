@@ -1,0 +1,14 @@
+@import './../../modules/colors';
+svg{
+    width: 100%;
+    height: auto;
+g{
+    #pathCasa{
+        fill: $color1;
+    }
+
+    #pathNombre{
+        fill: $color2;
+    }
+}
+}

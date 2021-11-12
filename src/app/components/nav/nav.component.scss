@@ -1,0 +1,56 @@
+@import './../../modules/colors';
+@import './../../modules/fonts';
+@import './../../modules/keyframes';
+
+nav{
+    position: relative;
+    height: 100vh;
+    max-width: 320px;
+    padding: 40px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .boxLogo{
+        height: fit-content;
+        width: 100px;
+        margin-bottom: 50px;
+    }
+
+    ul{
+        display: grid;
+        margin: 25px;
+        gap: 20px;
+
+        li{
+            list-style: none;
+            a{
+                font-size: 1.3em;
+                text-decoration: none;
+                color: $color2;
+                display: flex;
+                padding-right: 20px;
+                align-items: center;
+                width: 200px;
+                transition: all .2s ease;
+                i{
+                    font-size: 1.3em;
+                    padding: 10px;
+                    margin-right: 5px;
+                    color: $color2;
+                    transition: all .2s ease;
+                }
+            }
+        }
+        li:hover{
+            list-style: none;
+            a{
+                color: $color1;
+                i{
+                    color: $color1;
+                    animation: rotate 0.7s ease-in-out;
+                    animation-fill-mode: both;
+                }
+            }
+        }
+    }
+}

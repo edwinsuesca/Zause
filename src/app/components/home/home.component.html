@@ -1,0 +1,26 @@
+<div class="boxHome" ng-app="myApp" ng-controller="myCtrl">
+    <header class="boxHeader">
+        <img class="imgPortada" src="../../../assets/img/portada.jpg" alt="">
+        <span>¿Qué te parece, para hoy una deliciosa pizza preparada en tu casa por el mejor chef?</span>
+    </header>
+    <section class="boxCards">
+        <div class="card" *ngFor="let chef of chefs">
+            <img class="perfilImage" [src]="chef.img" alt="">
+
+            <h3 class="name">{{chef.name}}</h3>
+
+            <div class="boxScore">
+                <div class="barScore" [style.width]="chef.score"></div>
+            </div>
+
+            <div class="boxDescription">
+                <p class="description">
+                    {{chef.description}}
+                </p>
+                <span class="descriptionMoreButton" onclick="">Ver más</span>
+            </div>
+        
+            <span class="button">Ver Perfil</span>
+        </div>
+    </section>
+</div>

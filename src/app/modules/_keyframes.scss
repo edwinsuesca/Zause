@@ -1,0 +1,15 @@
+@keyframes rotate {
+    0%{transform:rotateZ(-30deg);}
+    20%{transform:rotateZ(25deg);}
+    40%{transform:rotateZ(-20deg);}
+    60%{transform:rotateZ(10deg);}
+    80%{transform:rotateZ(-5deg);}
+    100%{transform:rotateZ(0deg); color: $color1;}
+}
+
+@keyframes menuAnimation {
+    0%{margin-left: -230px;}
+    20%{margin-left: 0px;}
+    80%{margin-left: 0px;}
+    100%{margin-left: -230px;}
+}
