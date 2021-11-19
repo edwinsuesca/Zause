@@ -3,9 +3,20 @@
         <app-logo></app-logo>
     </div>
 
-    <input id="buscar" type="text" placeholder="Buscar">
+    <input id="buscar" type="text" placeholder="Buscar" (click)="categoryShow()">
     <ul>
         <li class="shop"><i class="icon-shopping-cart"><span>45</span></i></li>
         <li><i class="icon-frame"></i></li>
     </ul>
+
+    <div class="boxCategory" [style.display]="showCat" (mouseup)="categoryNone()" (mouseleave)="categoryNone()">
+        <div class="category" [style.backgroundColor]="color()">Postres</div>
+        <div class="category" [style.backgroundColor]="color()">Comida Mediterránea</div>
+        <div class="category" [style.backgroundColor]="color()">Cenas</div>
+        <div class="category" [style.backgroundColor]="color()">Desayunos</div>
+        <div class="category" [style.backgroundColor]="color()">Comida Oriental</div>
+        <div class="category" [style.backgroundColor]="color()">Postres</div>
+        <div class="category" [style.backgroundColor]="color()">Postres</div>
+        <div class="category" [style.backgroundColor]="color()">Postres</div>
+    </div>
 </div>

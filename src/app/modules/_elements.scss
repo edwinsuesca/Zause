@@ -1,3 +1,35 @@
+.boxAll{
+    background-color: #f8f8f8;
+    margin: 0 20px 20px 0;
+    height: calc(100vh - 110px);
+    min-height: 500px;
+    border-radius: 0 0 40px 40px;
+    padding: 0;
+    overflow: auto;
+    box-shadow: 0 0 20px #132e4350;
+}
+
+.boxMain{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    app-nav{
+        margin-left: -230px;
+        transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        animation: menuAnimation 3s 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    app-nav:hover{
+        margin-left: 0px;
+        cursor: pointer;
+    }
+
+    .boxSection{
+        width: 100%;
+    }
+}
+
 .button{
     border-radius: 50px;
     background-color: $color1;

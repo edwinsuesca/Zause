@@ -6,26 +6,12 @@
     position: relative;
     display: flex;
     overflow: hidden;
+    min-height: 100vh;
     #backgroundImg{
         position: fixed;
         z-index: -1;
         width: 100%;
         height: 100vh;
         object-fit: cover;
-    }
-
-    app-nav{
-        margin-left: -230px;
-        transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        animation: menuAnimation 3s 1s cubic-bezier(0.77, 0, 0.175, 1);
-
-    }
-
-    app-nav:hover{
-        margin-left: 0px;
-    }
-
-    .boxSection{
-        width: 100%;
     }
 }

@@ -4,20 +4,7 @@
     </div>
 
     <ul>
-        <li>
-            <a href="#"><i class="icon-home-1"></i>Inicio</a>
-        </li>
-
-        <li>
-            <a href="#"><i class="icon-profile-2user"></i> Chefs</a>
-        </li>
-
-        <li>
-            <a href="#"><i class="icon-reserve"></i>Recetas</a>
-        </li>
-
-        <li>
-            <a href="#"><i class="icon-more"></i>Sobre Nosotros</a>
+        <li *ngFor="let option of options"><a routerLink={{option.routerLink}}>{{option.element}}</a>
         </li>
     </ul>
 </nav>

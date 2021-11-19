@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
+  options = [
+    {element: "Inicio", routerLink: "/home"},
+    {element: "Nav", routerLink: "/nav"},
+    {element: "Qué es Zause", routerLink: "/about"},
+  ]
   constructor() { }
 
   ngOnInit(): void {

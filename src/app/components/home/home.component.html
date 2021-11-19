@@ -1,26 +1,62 @@
-<div class="boxHome" ng-app="myApp" ng-controller="myCtrl">
-    <header class="boxHeader">
-        <img class="imgPortada" src="../../../assets/img/portada.jpg" alt="">
-        <span>¿Qué te parece, para hoy una deliciosa pizza preparada en tu casa por el mejor chef?</span>
-    </header>
-    <section class="boxCards">
-        <div class="card" *ngFor="let chef of chefs">
-            <img class="perfilImage" [src]="chef.img" alt="">
+<div class="boxMain">
+    <app-nav></app-nav>
+    <div class="boxSection">
+        <app-bar></app-bar>
+        <div class="boxAll boxHome" ng-app="myApp" ng-controller="myCtrl">
+            <header class="boxHeader">
+                <img class="imgPortada" src="../../../assets/img/portada.jpg" alt="">
+                <span>¿Qué te parece, para hoy una deliciosa pizza preparada en tu casa por el mejor chef?</span>
+                <img class="arrow" src="../../../assets/img/arrow.gif" alt="">
+            </header>
+            <section>
+                <div class="boxCards">
+                    <div class="card" *ngFor="let chef of chefs" #card>
+                        <img class="perfilImage" [src]="chef.img" alt="">
+            
+                        <h3 class="name">{{chef.name}}</h3>
+            
+                        <div class="boxScore">
+                            <div class="barScore" [style.width]="chef.score"></div>
+                        </div>
+            
+                        <div class="boxDescription">
+                            <p class="hide all" #description>
+                                {{chef.description}}
+                            </p>
+                            <span #showMore *ngIf="chef.description.length>=81 && this.card.clientWidth >= 250" class="descriptionMoreButton" (click)="cambioClase(this.description, this.showMore)">Ver más</span>
+                        </div>
+                    
+                        <span class="button">Ver Perfil</span>
+                    </div>
+                </div>
 
-            <h3 class="name">{{chef.name}}</h3>
+                <app-info class="information"></app-info>
+            </section>
 
-            <div class="boxScore">
-                <div class="barScore" [style.width]="chef.score"></div>
-            </div>
+            <section>
+                <div class="boxCards">
+                    <div class="card" *ngFor="let chef of chefs" #card>
+                        <img class="perfilImage" [src]="chef.img" alt="">
+            
+                        <h3 class="name">{{chef.name}}</h3>
+            
+                        <div class="boxScore">
+                            <div class="barScore" [style.width]="chef.score"></div>
+                        </div>
+            
+                        <div class="boxDescription">
+                            <p class="hide all" #description>
+                                {{chef.description}}
+                            </p>
+                            <span #showMore *ngIf="chef.description.length>=81 && this.card.clientWidth >= 250" class="descriptionMoreButton" (click)="cambioClase(this.description, this.showMore)">Ver más</span>
+                        </div>
+                    
+                        <span class="button">Ver Perfil</span>
+                    </div>
+                </div>
 
-            <div class="boxDescription">
-                <p class="description">
-                    {{chef.description}}
-                </p>
-                <span class="descriptionMoreButton" onclick="">Ver más</span>
-            </div>
-        
-            <span class="button">Ver Perfil</span>
+                <app-info class="information"></app-info>
+            </section>
         </div>
-    </section>
+    </div>
 </div>
