@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   options = [
     {element: "Inicio", routerLink: "/home"},
-    {element: "Nav", routerLink: "/nav"},
+    {element: "Trabaja con nosotros", routerLink: "/work"},
     {element: "Qué es Zause", routerLink: "/about"},
   ]
   constructor() { }

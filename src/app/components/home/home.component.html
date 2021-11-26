@@ -4,58 +4,58 @@
         <app-bar></app-bar>
         <div class="boxAll boxHome" ng-app="myApp" ng-controller="myCtrl">
             <header class="boxHeader">
-                <img class="imgPortada" src="../../../assets/img/portada.jpg" alt="">
-                <span>¿Qué te parece, para hoy una deliciosa pizza preparada en tu casa por el mejor chef?</span>
-                <img class="arrow" src="../../../assets/img/arrow.gif" alt="">
-            </header>
-            <section>
-                <div class="boxCards">
-                    <div class="card" *ngFor="let chef of chefs" #card>
-                        <img class="perfilImage" [src]="chef.img" alt="">
-            
-                        <h3 class="name">{{chef.name}}</h3>
-            
-                        <div class="boxScore">
-                            <div class="barScore" [style.width]="chef.score"></div>
-                        </div>
-            
-                        <div class="boxDescription">
-                            <p class="hide all" #description>
-                                {{chef.description}}
-                            </p>
-                            <span #showMore *ngIf="chef.description.length>=81 && this.card.clientWidth >= 250" class="descriptionMoreButton" (click)="cambioClase(this.description, this.showMore)">Ver más</span>
-                        </div>
-                    
-                        <span class="button">Ver Perfil</span>
+                <div class="boxArrows" #boxSlider [style.margin-left]= "margin + '%'">
+                    <div class="slider" *ngFor="let slider of slider">
+                        <img [src]="slider.img1" alt="">
                     </div>
+                    
+                    <i class="icon-arrow-left-3 arrows" (click)="sliderCh('left')"></i>
+                    <i class="icon-arrow-right-2 arrows" (click)="sliderCh('right')"></i>
+                </div>
+            </header>
+
+            <section class="verGalerias section">
+                <div>
+                    <img src="../../../assets/img/equipoChefs.jpg" alt="">
+                    <a href="home/#chefs" class="button">Ver galería de Chefs</a>
                 </div>
 
-                <app-info class="information"></app-info>
+                <div>
+                    <img routerLink="home/#platos" src="../../../assets/img/platos.jpg" alt="">
+                    <a href="home/#platos" class="button">Ver galería de Platos</a>
+                </div>
             </section>
 
-            <section>
+            <section id="chefs" class="section">
+                <h2 class="titleSection">Chefs en Bogotá</h2>
                 <div class="boxCards">
-                    <div class="card" *ngFor="let chef of chefs" #card>
-                        <img class="perfilImage" [src]="chef.img" alt="">
+                    <div class="card" *ngFor="let viewChefs of viewChefs" #card>
+                        <img class="perfilImage" [src]="viewChefs.img" alt="" routerLink='/perfilChef'>
             
-                        <h3 class="name">{{chef.name}}</h3>
+                        <h3 class="name">{{viewChefs.name}}</h3>
             
                         <div class="boxScore">
-                            <div class="barScore" [style.width]="chef.score"></div>
+                            <div class="barScore" [style.width]="viewChefs.score + '%'"></div>
                         </div>
             
                         <div class="boxDescription">
                             <p class="hide all" #description>
-                                {{chef.description}}
+                                {{viewChefs.description}}
                             </p>
-                            <span #showMore *ngIf="chef.description.length>=81 && this.card.clientWidth >= 250" class="descriptionMoreButton" (click)="cambioClase(this.description, this.showMore)">Ver más</span>
+                            <span #showMore *ngIf="viewChefs.description.length>=81 && this.card.clientWidth >= 250" class="descriptionMoreButton" (click)="cambioClase(this.description, this.showMore)">Ver más</span>
                         </div>
                     
-                        <span class="button">Ver Perfil</span>
+                        <span class="button" routerLink='/perfilChef'>Ver Perfil</span>
                     </div>
                 </div>
 
                 <app-info class="information"></app-info>
+
+                <span class="button2 viewMoreChefs" (click)="moreChefs()">Ver más</span>
+            </section>
+
+            <section id="platos" class="section">
+                <app-cards></app-cards>
             </section>
         </div>
     </div>

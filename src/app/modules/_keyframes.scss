@@ -13,3 +13,13 @@
     80%{margin-left: 0px;}
     100%{margin-left: -230px;}
 }
+
+@keyframes clip {
+    0%{clip-path: circle(0 at 50% 50%);}
+    100%{clip-path: circle(50% at 50% 50%);}
+}
+
+@keyframes clipPortada {
+    0%{clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);}
+    100%{clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 65%, 0 100%);}
+}

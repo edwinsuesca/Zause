@@ -10,6 +10,8 @@ import { BarComponent } from './components/bar/bar.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { AboutComponent } from './components/about/about.component';
 import { InfoComponent } from './components/info/info.component';
+import { WorkComponent } from './components/work/work.component';
+import { ChefComponent } from './components/chef/chef.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { InfoComponent } from './components/info/info.component';
     BarComponent,
     CardsComponent,
     AboutComponent,
-    InfoComponent
+    InfoComponent,
+    WorkComponent,
+    ChefComponent
   ],
   imports: [
     BrowserModule,

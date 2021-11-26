@@ -1,18 +1,26 @@
-<!-- <div class="cajaTarjeta">
-    <div class="cajaImagenTitulo">
-        <img src="../../../assets/img/chef1.png" alt="">
-        <h2>Nombre Chef</h2>
-    </div>
-</div> -->
-<div class="card">
-    <img class="perfilImage" src="../../../assets/img/chef1.png" alt="">
-    <h3 class="name">Jorge Cárdenas</h3>
-    <div class="boxScore">
-        <div class="barScore"></div>
-    </div>
-    <p class="description">
-        Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet...
-    </p>
+<div class="section">
+    <h2 class="titleSection">Platos Destacados</h2>
+    <div class="boxCards">
+        <div class="card" *ngFor="let plato of platos" #card>
+            <img class="platoImage" [src]="plato.img" alt="">
 
-    <span class="button">Ver Perfil</span>
+            <h3 class="name">{{plato.name}}</h3>
+
+            <div class="boxScore">
+                <div class="barScore" [style.width]="plato.score"></div>
+            </div>
+
+            <div class="boxDescription">
+                <p class="hide all" #description>
+                    {{plato.description}}
+                </p>
+                <span #showMore *ngIf="plato.description.length>=81 && this.card.clientWidth >= 250"
+                    class="descriptionMoreButton" (click)="cambioClase(this.description, this.showMore)">Ver más</span>
+            </div>
+
+            <span class="button">Ver Platos</span>
+        </div>
+    </div>
+
+    <app-info class="information"></app-info>
 </div>
