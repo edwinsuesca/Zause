@@ -15,18 +15,18 @@
             </header>
 
             <section class="verGalerias section">
-                <div>
-                    <img src="../../../assets/img/equipoChefs.jpg" alt="">
-                    <a href="home/#chefs" class="button">Ver galería de Chefs</a>
+                <div (click)="goDown('cardsChefs')">
+                    <img src="./assets/img/equipoChefs.jpg" alt="">
+                    <a class="button">Ver galería de Chefs</a>
                 </div>
 
-                <div>
-                    <img routerLink="home/#platos" src="../../../assets/img/platos.jpg" alt="">
-                    <a href="home/#platos" class="button">Ver galería de Platos</a>
+                <div (click)="goDown('cardsFood')">
+                    <img routerLink="home/this.platos" src="./assets/img/platos.jpg" alt="">
+                    <a class="button">Ver galería de Platos</a>
                 </div>
             </section>
 
-            <section id="chefs" class="section">
+            <section #cardsChefs class="section">
                 <h2 class="titleSection">Chefs en Bogotá</h2>
                 <div class="boxCards">
                     <div class="card" *ngFor="let viewChefs of viewChefs" #card>
@@ -54,7 +54,7 @@
                 <span class="button2 viewMoreChefs" (click)="moreChefs()">Ver más</span>
             </section>
 
-            <section id="platos" class="section">
+            <section #cardsFood class="section">
                 <app-cards></app-cards>
             </section>
         </div>

@@ -150,14 +150,14 @@
         margin: 25px;
         a{
           font-weight: bold;
-          font-size: 2em;
+          font-size: calc(0.7em + 1vw);
           margin: 20px 0;
           max-width: fit-content;
           transition: all 0.3s ease-in-out;
           text-decoration: none;
         }
         img{
-          width: 70%;
+          width: 100%;
           border-radius: 20px;
           transition: all 0.3s ease-in-out;
         }

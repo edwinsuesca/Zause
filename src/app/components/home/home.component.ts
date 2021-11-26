@@ -1,5 +1,7 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ElementRef, Renderer2, ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,52 +12,52 @@ export class HomeComponent implements OnInit {
 
   slider = [
     {
-      img1: './../../../assets/img/slider/1.jpg',
+      img1: './assets/img/slider/1.jpg',
       description: 'Reverencia por la vida'
     },
 
     {
-      img1: './../../../assets/img/slider/2.jpg',
+      img1: './assets/img/slider/2.jpg',
       description: 'Reverencia por la vida'
     },
 
     {
-      img1: './../../../assets/img/slider/3.png',
+      img1: './assets/img/slider/3.png',
       description: 'Reverencia por la vida'
     },
 
     {
-      img1: './../../../assets/img/slider/4.png',
+      img1: './assets/img/slider/4.png',
       description: 'Reverencia por la vida'
     }
   ]
 
   chefs = [
-    { name: 'Diego Molina', img: '../../../assets/img/chef1.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 100 },
+    { name: 'Diego Molina', img: './assets/img/chef1.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 100 },
 
-    { name: 'Andrea Corrales', img: '../../../assets/img/chef2.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 95 },
+    { name: 'Andrea Corrales', img: './assets/img/chef2.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 95 },
 
-    { name: 'Beto Cárdenas', img: '../../../assets/img/chef3.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 90 },
+    { name: 'Beto Cárdenas', img: './assets/img/chef3.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 90 },
 
-    { name: 'Juan', img: '../../../assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia.', score: 85 },
+    { name: 'Juan', img: './assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia.', score: 85 },
 
-    { name: 'Carlos Herrera', img: '../../../assets/img/chef5.jpg', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 80 },
+    { name: 'Carlos Herrera', img: './assets/img/chef5.jpg', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 80 },
 
-    { name: 'Natalia Gil', img: '../../../assets/img/chef7.jpg', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 75 },
+    { name: 'Natalia Gil', img: './assets/img/chef7.jpg', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 75 },
 
-    { name: 'Laura Ruíz', img: '../../../assets/img/chef6.webp', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 70 },
+    { name: 'Laura Ruíz', img: './assets/img/chef2.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 70 },
 
-    { name: 'Humbreto López', img: '../../../assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 65 },
+    { name: 'Humbreto López', img: './assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 65 },
 
-    { name: 'Santiago', img: '../../../assets/img/chef4.png', description: 'Este es el nuevo perfil de un nuevo chef', score: 60 },
+    { name: 'Santiago', img: './assets/img/chef4.png', description: 'Este es el nuevo perfil de un nuevo chef', score: 60 },
 
-    { name: 'Carla', img: '../../../assets/img/chef6.webp', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 55 },
+    { name: 'Carla', img: './assets/img/chef1.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet. Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 55 },
 
-    { name: 'Wilson', img: '../../../assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 50 },
+    { name: 'Wilson', img: './assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia; especialista en pizzas gourmet.', score: 50 },
 
-    { name: 'Diego', img: '../../../assets/img/chef4.png', description: 'Este es el nuevo perfil de un nuevo chef', score: 45 },
+    { name: 'Diego', img: './assets/img/chef4.png', description: 'Este es el nuevo perfil de un nuevo chef', score: 45 },
 
-    { name: 'Lucas', img: '../../../assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia.', score: 40 }
+    { name: 'Lucas', img: './assets/img/chef4.png', description: 'Chef de Bogotá con 7 años de experiencia.', score: 40 }
   ];
 
   chefsOrder = [];
@@ -66,7 +68,8 @@ export class HomeComponent implements OnInit {
   margin: number = 0;
 
 
-  constructor() { }
+  constructor(private scroller:ViewportScroller, private router:Router) {}
+  
   // @ViewChild('description') public description!:ElementRef;
   @ViewChild('boxSlider') public boxSlider!: ElementRef;
 
@@ -128,6 +131,26 @@ export class HomeComponent implements OnInit {
     if (side == "right" && this.margin > -((this.slider.length - 1) * 100)) {
       this.margin -= 100;
       console.log(this.margin)
+    }
+  }
+   @ViewChild('cardsChefs') public cardsChefs!: ElementRef;
+   @ViewChild('cardsFood') public cardsFood!: ElementRef; 
+
+
+  public goDown(e:string) {
+    if(e == 'cardsChefs'){
+      this.cardsChefs.nativeElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
+    else{
+      this.cardsFood.nativeElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
     }
   }
 
